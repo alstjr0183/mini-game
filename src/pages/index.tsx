@@ -1,10 +1,14 @@
 import type { NextPage } from "next";
-import Head from "next/head";
-import Image from "next/image";
-import styles from "../styles/Home.module.css";
-
+import GlobalStyle from "../styles/GlobalStyeld";
+import theme from "../styles/theme";
+import { ThemeProvider } from "styled-components";
 const Home: NextPage = () => {
-  return <div></div>;
+  return (
+    <>
+      <GlobalStyle />
+      <ThemeProvider theme={theme}></ThemeProvider>
+    </>
+  );
 };
 
 export default Home;
