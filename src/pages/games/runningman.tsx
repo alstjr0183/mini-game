@@ -1,8 +1,11 @@
-import React from 'react'
+import HeadInfo from '../../components/HeaderInfo'
 
-function runningman() {
+const runningman = () => {
   return (
-    <div>runningman</div>
+    <div>
+      <HeadInfo title="런닝록맨" />
+      <h1>런닝녹맨</h1>
+    </div>
   )
 }
 
