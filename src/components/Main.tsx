@@ -1,11 +1,12 @@
-import styled from "styled-components";
-import { flexbox } from "../styles/utils/flexbox";
-import Banner from "./common/Banner";
+import styled from 'styled-components';
+import Banner from './common/Banner';
+import GameList from '../components/GameList';
 
 const Main: React.FC = () => {
   return (
     <MainSection>
       <Banner />
+      <GameList />
     </MainSection>
   );
 };

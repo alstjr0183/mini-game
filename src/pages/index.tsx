@@ -1,9 +1,9 @@
-import type { NextPage } from "next";
-import GlobalStyle from "../styles/GlobalStyeld";
-import theme from "../styles/theme";
-import { ThemeProvider } from "styled-components";
-import Layout from "../components/Layout";
-import Main from "../components/Main";
+import type { NextPage } from 'next';
+import GlobalStyle from '../styles/GlobalStyeld';
+import theme from '../styles/theme';
+import { ThemeProvider } from 'styled-components';
+import Layout from '../components/Layout';
+import Main from '../components/Main';
 
 const Home: NextPage = () => {
   return (
