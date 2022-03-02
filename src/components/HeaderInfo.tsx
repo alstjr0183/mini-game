@@ -1,17 +1,13 @@
 import Head from 'next/head'
+import { HeaderInfoprops } from '../shared/const'
 
-type HeaderInfoprops = {
-    title: string, 
-    keyword: string,
-    contents: string,
-}
 
 function HeaderInfo({title, keyword, contents}:HeaderInfoprops) {
   return (
-      <Head>
+    <Head>
           <title>{title}</title>
-          {/* <meta keyword={keyword} />
-          <meta contents={contents} /> */}
+          <meta name="keyword" content={keyword} />
+          <meta name="description" content={contents} />
     </Head>
   )
 }

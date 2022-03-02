@@ -1,17 +1,11 @@
-import HeadInfo from '../components/HeaderInfo'
+import HeadInfo from '../components/HeaderInfo';
+import { AppLayoutprops } from '../shared/const';
 
-
-type AppLayoutprops = {
-  children: any,
-}
-
-export default function Layout({ children }:AppLayoutprops) {
+export default function Layout({ children }: AppLayoutprops) {
   return (
     <>
       <HeadInfo />
       <div>{children}</div>
-      </>
+    </>
   );
 }
-
-

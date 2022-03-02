@@ -1,9 +1,6 @@
 import Head from "next/head";
+import { Seoprops } from '../shared/const'
 
-
-type Seoprops ={
-  title: string,
-}
 export default function Seo({ title }:Seoprops) {
   return (
     <Head>

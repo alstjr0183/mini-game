@@ -1,4 +1,4 @@
-import HeadInfo from '../../components/HeaderInfo'
+import HeadInfo from '../../components/HeaderInfo';
 
 const runningman = () => {
   return (
@@ -6,7 +6,7 @@ const runningman = () => {
       <HeadInfo title="런닝록맨" />
       <h1>런닝녹맨</h1>
     </div>
-  )
-}
+  );
+};
 
 export default runningman;
