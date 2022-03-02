@@ -7,41 +7,32 @@ import axios from 'axios';
 
 SwiperCore.use([Pagination, Navigation]);
 
-const Banner = ({ posts }: any) => {
-  console.log(posts);
+const Banner = ({ test }: any): any => {
   return (
-    <Swiper
-      slidesPerView={1}
-      pagination={{
-        clickable: true,
-      }}
-      navigation
-      loop={true}
-    >
-      {/* {images.map((src: string, index: number) => {
-        console.log(src);
-        return (
-          <SwiperSlide key={`${index}`}>
-            <Image src={src} layout="responsive" width={640} height={400} alt="test_image" />
-          </SwiperSlide>
-        );
-      })} */}
-    </Swiper>
-  );
-};
+    <div>
+      {test.map((data: any, index: any): any => (
+        <div>{data.title}</div>
+      ))}
+    </div>
+    // <Swiper
+    //   slidesPerView={1}
+    //   pagination={{
+    //     clickable: true,
+    //   }}
+    //   navigation
+    //   loop={true}
+    // >
 
-export const getServerSideProps: GetServerSideProps = async () => {
-  const res = await fetch('https://jsonplaceholder.typicode.com/posts?_start=0&_end=10');
-  const posts = await res.json();
-  // const images: object[] = [
-  //   { img: 'https://cdn.pixabay.com/photo/2021/08/21/19/39/greyhound-6563435__340.jpg' },
-  //   { img: 'https://cdn.pixabay.com/photo/2022/02/19/21/46/beach-7023446__340.jpg' },
-  // ];
-  return {
-    props: {
-      posts,
-    },
-  };
+    //   {/* {images.map((src: string, index: number) => {
+    //     console.log(src);
+    //     return (
+    //       <SwiperSlide key={`${index}`}>
+    //         <Image src={src} layout="responsive" width={640} height={400} alt="test_image" />
+    //       </SwiperSlide>
+    //     );
+    //   })} */}
+    // </Swiper>
+  );
 };
 
 export default Banner;
