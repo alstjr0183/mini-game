@@ -5,6 +5,7 @@ import { ThemeProvider } from 'styled-components';
 import Layout from '../components/Layout';
 import axios from 'axios';
 import Banner from '../components/common/Banner';
+import GameList from '../components/GameList';
 
 const Home: NextPage = ({ test }: any): any => {
   return (
@@ -12,6 +13,7 @@ const Home: NextPage = ({ test }: any): any => {
       <GlobalStyle />
       <ThemeProvider theme={theme}>
         <Banner test={test} />
+        <GameList />
       </ThemeProvider>
     </>
   );
