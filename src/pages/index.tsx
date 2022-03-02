@@ -7,30 +7,30 @@ import axios from 'axios';
 import Banner from '../components/common/Banner';
 import GameList from '../components/GameList';
 
-const Home: NextPage = ({ test }: any): any => {
+const Home: NextPage = ({ images }: any): any => {
+  console.log(images);
   return (
     <>
       <GlobalStyle />
       <ThemeProvider theme={theme}>
-        <Banner test={test} />
-        <GameList />
+        <Banner images={images} />
       </ThemeProvider>
     </>
   );
 };
 
 export const getServerSideProps: GetServerSideProps = async () => {
-  const res = await fetch('https://jsonplaceholder.typicode.com/posts?_start=0&_end=10');
-  const test = await res.json();
-  console.log(res);
+  // const res = await fetch('https://jsonplaceholder.typicode.com/posts?_start=0&_end=10');
+  // const test = await res.json();
+  // console.log(res);
 
-  // const images: object[] = [
-  //   { img: 'https://cdn.pixabay.com/photo/2021/08/21/19/39/greyhound-6563435__340.jpg' },
-  //   { img: 'https://cdn.pixabay.com/photo/2022/02/19/21/46/beach-7023446__340.jpg' },
-  // ];
+  const images: object[] = [
+    { img: 'https://cdn.pixabay.com/photo/2021/08/21/19/39/greyhound-6563435__340.jpg' },
+    { img: 'https://cdn.pixabay.com/photo/2022/02/19/21/46/beach-7023446__340.jpg' },
+  ];
   return {
     props: {
-      test,
+      images,
     },
   };
 };
