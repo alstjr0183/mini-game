@@ -11,3 +11,7 @@ export interface AppLayoutprops {
 export interface Seoprops {
   title: string;
 }
+
+export interface Bannerprops {
+  images: { img: string }[];
+}
