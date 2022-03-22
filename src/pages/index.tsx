@@ -16,6 +16,7 @@ const Home = ({ images }: Bannerprops): any => {
       <ThemeProvider theme={theme}>
         <StyledContents>
           <Banner images={images} />
+          <GameList />
         </StyledContents>
       </ThemeProvider>
     </StyledHome>
@@ -47,3 +48,4 @@ export const getServerSideProps: GetServerSideProps = async () => {
     },
   };
 };
+export default Home;
