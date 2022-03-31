@@ -8,7 +8,7 @@ export default function GameList() {
     <Container>
       <ul className="game__list">
         <li className="first__line game__name ">
-          <Link href={{ pathname: '/games/runningman' }}>
+          <Link href={{ pathname: '/games/rockman' }}>
             <a>런닝록맨</a>
           </Link>
         </li>
