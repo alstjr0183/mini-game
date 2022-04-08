@@ -14,8 +14,8 @@ export default function GameList() {
         </li>
         <div className="second__line">
           <li className="game__name">
-            <Link href={{ pathname: '/games/runningman' }}>
-              <a>가위바위보</a>
+            <Link href={{ pathname: '/games/fantasy' }}>
+              <a>fantasy</a>
             </Link>
           </li>
           <li className="game__name">
