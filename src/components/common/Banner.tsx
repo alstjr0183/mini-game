@@ -21,7 +21,7 @@ const Banner = ({ images }: Bannerprops) => {
         loop={true}
       >
         {images.map((src: { img: string }, index: number) => {
-          console.log(src);
+          // console.log(src);
           return (
             <SwiperSlide key={`${index}`}>
               <Image src={src.img} layout="responsive" width={640} height={150} alt="test_image" />
