@@ -36,7 +36,6 @@ const StyledContents = styled.section`
 export const getServerSideProps: GetServerSideProps = async () => {
   // const res = await fetch('https://jsonplaceholder.typicode.com/posts?_start=0&_end=10');
   // const test = await res.json();
-  // console.log(res);
 
   const images: { img: string }[] = [
     { img: 'https://cdn.pixabay.com/photo/2021/08/21/19/39/greyhound-6563435__340.jpg' },
