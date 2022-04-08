@@ -1,49 +1,53 @@
 import React, { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
-interface CanvasProps {
+interface CanvasSize {
   WIDTH: number;
   HEIGHT: number;
 }
-
-interface Coordinate {
-  x: number;
-  y: number;
-}
-
 function RockMan(): any {
   const [canvas, setCanvas] = useState<HTMLCanvasElement | null>(null);
   const [ctx, setCtx] = useState<CanvasRenderingContext2D | null>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
-
-  const clearCanvas = (): void => {
-    ctx?.beginPath();
-  };
+  const [size, setSize] = useState<CanvasSize>({
+    WIDTH: 0,
+    HEIGHT: 0,
+  });
 
   useEffect(() => {
     if (!canvasRef.current) return;
     const canvas = canvasRef.current;
     setCanvas(canvas);
     setCtx(canvas.getContext('2d'));
-    // clearCanvas();
-  }, [canvasRef]);
+  }, []);
 
   useEffect(() => {
     if (!ctx) return;
     ctx.fillStyle = 'red';
-    ctx.fillRect(0, 0, 800, 600);
+    ctx.fillRect(0, 0, 200, 200);
   }, [canvas, ctx]);
 
-  console.log(ctx);
+  useEffect(() => {
+    setSize({
+      ...size,
+      WIDTH: window.innerWidth,
+      HEIGHT: window.innerHeight,
+    });
+  }, []);
+
+  const rockman = {
+    x: 10,
+    y: 200,
+    width: 50,
+    height: 50,
+  };
 
   return (
     <Container>
-      ddddd
-      <canvas ref={canvasRef} height={800} width={600} />
+      <canvas ref={canvasRef} width={size.WIDTH} height={size.HEIGHT}></canvas>
     </Container>
   );
 }
 
-const Canvas = styled.canvas``;
-const Container = styled.canvas``;
+const Container = styled.div``;
 
 export default RockMan;
