@@ -28,6 +28,11 @@ export default function GameList() {
               <a>두더지 잡기</a>
             </Link>
           </li>
+          <li className="game__name">
+            <Link href={{ pathname: '/games/movies' }}>
+              <a>Popular Movie</a>
+            </Link>
+          </li>
         </div>
       </ul>
     </Container>
