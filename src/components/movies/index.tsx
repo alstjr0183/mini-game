@@ -1,6 +1,6 @@
-import { useEffect, useState } from 'react';
 import { Container } from './styles';
 
+// TODO: Add Type
 export default function MoviePage({ results }) {
   console.log(results);
   return (

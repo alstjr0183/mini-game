@@ -1,6 +1,7 @@
 import HeaderInfo from '../../components/HeaderInfo';
 import MoviePage from '../../components/movies';
 
+// TODO: Add Type
 export default function Movies({ results }) {
   console.log(results);
   return (
@@ -11,10 +12,10 @@ export default function Movies({ results }) {
   );
 }
 
-export async function getStaticProps() {
-  const API_KEY = '96267eb5d8531873d025017bde38767c';
-
-  const { results } = await (await fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&page=${Math.floor(Math.random() * 10) + 1}`)).json();
+export async function getServerSideProps() {
+  const { results } = await (
+    await fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${process.env.NEXT_PUBLIC_API_KEY}&page=${Math.floor(Math.random() * 10) + 1}`)
+  ).json();
 
   return {
     props: {
