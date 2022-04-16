@@ -1,8 +1,12 @@
+import { getMovies } from '../../pages/games/movies';
+import { MovieProps } from '../../types/movies';
 import { Container } from './styles';
+import { useQuery } from 'react-query';
 
-// TODO: Add Type
-export default function MoviePage({ results }) {
-  console.log(results);
+export default function MoviePage({ results }: MovieProps) {
+  const { data } = useQuery('posts', getMovies, { initialData: results });
+  console.log(data);
+
   return (
     <Container>
       <div className="inner">
