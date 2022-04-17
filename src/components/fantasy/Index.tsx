@@ -14,27 +14,22 @@ const Index = () => {
 
   const [xPos, setxPos] = useState(10);
   const [yPos, setyPos] = useState(10);
-  const [check, setCheck] = useState(false);
 
   const { width, height } = size;
 
   const move = 50;
 
   const keyDownHandler = (e: any) => {
-    setCheck(true);
-    if (e.key === 'ArrowRight') {
+    console.log(e.key);
+    if (e.key === 'd') {
       setxPos(xPos + move);
-    } else if (e.key === 'ArrowLeft') {
+    } else if (e.key === 'a') {
       setxPos(xPos - move);
-    } else if (e.key === 'ArrowUp') {
+    } else if (e.key === 'w') {
       setyPos(yPos - move);
-    } else if (e.key === 'ArrowDown') {
+    } else if (e.key === 's') {
       setyPos(yPos + move);
     }
-  };
-
-  const keyUpHandler = (e: any) => {
-    setCheck(false);
   };
 
   useEffect(() => {
@@ -46,11 +41,10 @@ const Index = () => {
     const canvas = canvasRef.current;
     setCanvas(canvas);
     setCtx(canvas.getContext('2d'));
-  }, [canvas]);
+  }, []);
 
   useEffect(() => {
     if (!ctx) return;
-
     const test = () => {
       ctx.clearRect(0, 0, width, height);
       ctx.beginPath();
@@ -59,17 +53,11 @@ const Index = () => {
     };
 
     requestAnimationFrame(test);
-  }, [ctx, xPos, yPos, check]);
-
-  useEffect(() => {
-    if (!ctx) return;
-    document.addEventListener('keydown', keyDownHandler);
-    document.addEventListener('keyup', keyUpHandler);
-  }, [check, ctx]);
+  }, [ctx, xPos, yPos]);
 
   return (
     <StyledIndex>
-      <canvas width={width} height={height} ref={canvasRef}></canvas>
+      <canvas onKeyDown={keyDownHandler} tabIndex={0} width={width} height={height} ref={canvasRef}></canvas>
     </StyledIndex>
   );
 };
