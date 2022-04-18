@@ -8,8 +8,8 @@ export const Container = styled.section`
 
   .inner {
     position: relative;
-    width: 200px;
-    height: 200px;
+    width: 100px;
+    height: 100px;
     transform-style: preserve-3d;
     animation: animate 20s linear infinite;
   }
@@ -25,6 +25,17 @@ export const Container = styled.section`
     -webkit-box-reflect: below 0px linear-gradient(transparent, transparent, #0004);
   }
 
+  p {
+    ${flexbox()};
+    margin-top: 110px;
+    font-size: 10px;
+    color: white;
+  }
+
+  .temp {
+    margin-top: 0px;
+  }
+
   img {
     position: absolute;
     top: 0;
@@ -32,6 +43,11 @@ export const Container = styled.section`
     width: 100%;
     height: 100%;
     object-fit: 100%;
+    transition: transform 200ms;
+
+    &:hover {
+      transform: scale(1.2);
+    }
   }
 
   @keyframes animate {
