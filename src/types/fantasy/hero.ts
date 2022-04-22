@@ -7,6 +7,7 @@ export interface HeroTypes {
 
 export interface Event {
   key: string;
+  repeat: boolean;
 }
 
 export interface HeroState {

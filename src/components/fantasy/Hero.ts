@@ -8,27 +8,32 @@ export default class Hero {
     this.setHero = setHero;
   }
   // 영웅 방향키 조작 이벤트
-  keyDownHandler = (e: Event) => {
-    if (e.key === 'd') {
+  keyDownHandler = (setting: any = []) => {
+    // const { keyState } = setting;
+
+    if (setting.keyState.right) {
       this.setHero({
         ...this.hero,
         xPos: this.hero.xPos + this.hero.speed,
       });
-    } else if (e.key === 'a') {
+    } else if (setting.keyState.left) {
       this.setHero({
         ...this.hero,
         xPos: this.hero.xPos - this.hero.speed,
       });
-    } else if (e.key === 'w') {
+    } else if (setting.keyState.top) {
       this.setHero({
         ...this.hero,
         yPos: this.hero.yPos - this.hero.speed,
       });
-    } else if (e.key === 's') {
+    } else if (setting.keyState.down) {
       this.setHero({
         ...this.hero,
         yPos: this.hero.yPos + this.hero.speed,
       });
     }
+    // setTimeout(() => {
+    //   this.keyDownHandler(setting);
+    // }, 100);
   };
 }
